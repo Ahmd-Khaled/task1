@@ -1,0 +1,48 @@
+.countries {
+  margin: 20px;
+}
+
+.mainTitle {
+  background-color: #f7e772;
+  color: #052944;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  font-size: 18px;
+  border-radius: 0px 16px 0px 16px;
+  -webkit-border-radius: 0px 16px 0px 16px;
+  -moz-border-radius: 0px 16px 0px 16px;
+  -ms-border-radius: 0px 16px 0px 16px;
+  -o-border-radius: 0px 16px 0px 16px;
+}
+
+.select {
+  border: 1px solid #556d91;
+  padding: 10px;
+  outline: none;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.contContainer {
+  margin-top: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  padding: 10px 20px;
+}
+
+.countries .title {
+  padding: 10px 0px;
+}
+
+@media (max-width: 450px) {
+  .select {
+    width: 300px;
+  }
+}
