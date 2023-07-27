@@ -59,7 +59,7 @@
 
 .btns {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 8px;
 }
 
@@ -75,8 +75,26 @@
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.editBtn:hover,
+.deleteBtn:hover {
+  opacity: 0.7;
 }
 
 .deleteBtn {
   background-color: #e74335;
+}
+
+
+@media (max-width: 450px) {
+  .btns {
+    flex-direction: column;
+  }
 }

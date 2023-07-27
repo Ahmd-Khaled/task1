@@ -11,15 +11,17 @@ const Countries = () => {
   const [isEdit, setIsEdit] = useState(false);
 
   const chooseCountryHandler = (e) => {
-    setSelectedCountries([...selectedCountries, e.target.value])
+    setSelectedCountries([...selectedCountries, e.target.value]);
   }
 
   const editSelectedCountry = (renamedCountry, index) => {
     setIsEdit(true);
     
     selectedCountries.splice(index, 1, renamedCountry);
-
     setSelectedCountries([...selectedCountries]);
+    
+    // const selectedCountriesWithoutDuplication = removeDuplicates(selectedCountries);
+    // setSelectedCountries([...selectedCountriesWithoutDuplication]);
   };
   
   const deleteSelectedCountry = (country) => {
@@ -28,8 +30,22 @@ const Countries = () => {
   
   console.log("selectedCountries", selectedCountries);
 
+  function removeDuplicates(arr) {
+    let unique = [];
+    arr.forEach(element => {
+        if (!unique.includes(element)) {
+            unique.push(element);
+        }
+    });
+    return unique;
+  }
+
   return (
     <section className={styles.countries}>
+      <a className={styles.github} href="https://github.com/Ahmd-Khaled/task1">
+        <img src="/images/github.svg" alt="github" />
+        <span>GitHub Link</span>
+      </a>
       <h1 className={styles.mainTitle}>Which country/countries you visit before?</h1>
       <select className={styles.select} onChange={chooseCountryHandler}>
           <option className={styles.item} defaultChecked>Choose Country</option>
@@ -41,7 +57,7 @@ const Countries = () => {
       </select>
       {
         selectedCountries.length > 0 ? (
-          <div className={styles.contContainer}>
+          <div className={styles.countContainer}>
             <h3 className={styles.title}>{selectedCountries.length} - {selectedCountries.length > 1 ? "Countries" : "Country"}</h3>
             {
               selectedCountries.map((item, index) => (

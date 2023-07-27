@@ -12,7 +12,6 @@ const Country = ({ id, name, editHandler, deleteHandler }) => {
     setIsEdit(false);
   }
   
-  
   const editCountry = () => {
     setIsEdit(true);
     editHandler();
